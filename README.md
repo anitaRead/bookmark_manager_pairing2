@@ -2,20 +2,14 @@
 
 ### To set up the database
 
-Connect to `psql` and create the `bookmark_manager` database:
-
-```
-CREATE DATABASE bookmark_manager;
-```
-
-To set up the appropriate table, connect to the database in `psql` and run the first SQL script in the `db/migrations` folder.
-
-Now create the `bookmark_manager_test` database:
-
-```
-CREATE DATABASE bookmark_manager_test;
-```
-To set up the appropriate table, connect to the database in `psql` and run the second SQL script in the `db/migrations` folder.
+1. Connect to `psql`
+2. Create the database using the `psql` command `CREATE DATABASE bookmark_manager;`
+3. Connect to the database using the `pqsl` command `\c bookmark_manager;`
+4. Run the query we have saved in the file `01_create_bookmarks_table.sql`
+5. Disconnect from the database
+6. Create the database using the `psql` command `CREATE DATABASE bookmark_manager_test;`
+7. Connect to the database using the `pqsl` command `\c bookmark_manager_test;`
+8. Run the query we have saved in the file `01_create_bookmarks_table.sql`
 
 ### User Story 1
 
