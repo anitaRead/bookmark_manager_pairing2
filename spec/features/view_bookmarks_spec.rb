@@ -8,15 +8,15 @@ feature 'Viewing bookmarks' do
 
   scenario 'user can view bookmarks' do
 
-    Bookmark.create(url: "http://www.makersacademy.com")
-    Bookmark.create(url: "http://www.destroyallsoftware.com")
-    Bookmark.create(url: "http://www.google.com")
+    Bookmark.create(title: 'makers', url: "http://www.makersacademy.com")
+    Bookmark.create(title: 'destroy', url: "http://www.destroyallsoftware.com")
+    Bookmark.create(title: 'google', url: "http://www.google.com")
 
     visit('/bookmarks')
 
-    expect(page).to have_content 'http://www.makersacademy.com'
-    expect(page).to have_content 'http://www.google.com'
-    expect(page).to have_content 'http://www.destroyallsoftware.com'
+    expect(page).to have_link('makers', href: 'http://www.makersacademy.com')
+    expect(page).to have_link('google', href: 'http://www.google.com')
+    expect(page).to have_link('destroy', href: 'http://www.destroyallsoftware.com')
   end
 end
 
